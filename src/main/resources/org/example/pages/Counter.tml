@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Counter Example</title>
+</head>
+<body>
+<h1>Counter: ${counter}</h1>
+<t:form>
+    <t:submit t:id="incrementButton" value="Increment" t:event="click"/>
+</t:form>
+</body>
+</html>
