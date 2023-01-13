@@ -3,13 +3,14 @@ package org.example.pages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.tapestry5.alerts.AlertManager;
+import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.PasswordField;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.ioc.annotations.Inject;
-
+@Import
 public class Login {
 
     private static final Logger logger = LogManager.getLogger(Login.class);
