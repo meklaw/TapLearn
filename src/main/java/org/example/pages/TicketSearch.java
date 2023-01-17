@@ -46,7 +46,6 @@ public class TicketSearch {
     public Object onSuccess() {
         if (!roundTrip)
             returnDate = null;
-        System.out.println(numberOfPassengers);
 
         return TicketResult.class;
     }
