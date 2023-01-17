@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Tickets Result</title>
+</head>
+<body>
+<p>Departure point: ${departurePoint}</p>
+<p>Destination point: ${destination}</p>
+<p>Departure date: ${departureDate}</p>
+<t:if test="roundTrip">
+    <p>Return date: ${returnDate}</p>
+</t:if>
+<p>Number of passengers: ${numberOfPassengers}</p>
+
+<br/>
+<a t:type="actionlink" t:id="pageLinkTicketSearch">Go Ticket Search</a>
+</body>
+</html>
