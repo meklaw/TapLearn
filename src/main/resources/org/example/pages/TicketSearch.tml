@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Tickets Search</title>
+</head>
+<body>
+<form t:type="form" t:id="ticketForm">
+    <t:errors/>
+    <div>
+        <t:radiogroup t:id="trip" t:value="roundTrip">
+            <label>Trip type:</label>
+            <br/>
+            <label t:type="label" for="roundTrip">Round trip</label>
+            <br/>
+            <input t:type="radio" t:value="true" t:id="roundTrip" value="roundTrip" t:mixins="triggerfragment" TriggerFragment.fragment="returnDateContainer"/>
+            <br/>
+            <label t:type="label" for="oneWay">One way</label>
+            <br/>
+            <input t:type="radio" t:value="false" t:id="oneWay" value="roundTrip" />
+            <br/>
+        </t:radiogroup>
+    </div>
+    <div>
+        <label>Departure point:</label>
+
+        <select t:type="select" t:id="departurePoint" t:value="departurePoint" model="departurePoints"
+                validate="required"/>
+        <t:error for="departurePoint"/>
+    </div>
+    <div>
+        <label>Destination:</label>
+
+        <select t:type="select" t:id="destination" t:value="destination" model="destinationPoints" validate="required"/>
+        <t:error for="destination"/>
+    </div>
+
+    <div>
+        <label t:type="label" for="departureDate">Departure date (d/M/yy):</label>
+        <input t:type="datefield" t:id="departureDate" t:value="departureDate" format="literal:d/M/yy"
+               validate="required"/>
+        <t:error for="departureDate"/>
+
+    </div>
+
+    <t:formfragment t:id="returnDateContainer" t:visible="roundTrip">
+        <div>
+            <label t:type="label" for="returnDate">Return date (d/M/yy):</label>
+            <input t:type="datefield" t:id="returnDate" t:value="returnDate" format="literal:d/M/yy" validate="required"/>
+            <t:error for="returnDate"/>
+        </div>
+
+    </t:formfragment>
+
+
+    <div>
+        <label>Number of passengers:</label>
+        <input t:type="textfield" translate="integer" t:value="numberOfPassengers" validate="required,min=1,max=10"/>
+        <br/>
+    </div>
+
+    <div>
+        <input t:type="submit" value="Find tickets"/>
+    </div>
+</form>
+
+</body>
+</html>
